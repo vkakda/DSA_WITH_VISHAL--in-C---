@@ -1,0 +1,31 @@
+# Ignore build and temp files
+*.exe
+*.o
+*.obj
+*.out
+*.log
+*.tmp
+*.vscode/
+.DS_Store
+Thumbs.db
+*.class
+*.pyc
+__pycache__/
+node_modules/
+.env
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+# Ignore backup files
+*~
+*.swp
+*.bak
+# Ignore test output
+/test-output/
+# Ignore personal folders
+my_ignore_folder/
