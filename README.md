@@ -89,9 +89,9 @@ DSA_WITH_VISHAL (in C++)/
 
 ## 📬 Connect
 
-- [LinkedIn](https://www.linkedin.com/in/vishal-dsa)
-- [YouTube](https://www.youtube.com/@VishalDSA)
-- [Email](mailto:vishal.dsa@example.com)
+- [LinkedIn](https://www.linkedin.com/in)
+- [YouTube](https://www.youtube.com)
+- [Email](mailto:vjcse12@gmail.com)
 
 ---
 

@@ -1,4 +1,4 @@
-//DSA with Vishal - Bubble Sort implementation
+// DSA with Vishal - Bubble Sort implementation
 
 /*
 STEPS-
@@ -15,6 +15,7 @@ it will take (n-1) iterations to sort the array of n elements.
 
 // Time Complexity: O(n^2) in the worst case, O(n) in the best case (when the array is already sorted).
 
+//code👇
 
 
 #include <iostream>
@@ -50,3 +51,5 @@ int main() {
 
     return 0;
 }
+
+// output - 1 2 4 5 8
