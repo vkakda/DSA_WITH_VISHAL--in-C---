@@ -46,7 +46,7 @@ int main() {
 }
 
 
-// Without using Hashing and TC-O(n).
+// Without using Hashing and TC-O(n). TCS & infosys ques.
 
 /*#include <iostream>
 #include <vector>
