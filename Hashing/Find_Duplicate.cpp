@@ -45,3 +45,31 @@ int main() {
     return 0;
 }
 
+
+// Without using Hashing and TC-O(n). TCS & infosys ques.
+
+/*#include <iostream>
+#include <vector>
+using namespace std;
+
+int findDuplicate(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> visited(n, 0); // Extra array to remember which numbers we saw
+
+    for (int i = 0; i < n; i++) {
+        int num = arr[i];
+        if (visited[num] == 1) {
+            return num; // This number was already seen
+        } else {
+            visited[num] = 1; // Mark this number as seen
+        }
+    }
+
+    return -1; // No duplicate found
+}
+
+int main() {
+    vector<int> arr = {1, 3, 4, 2, 5, 3};
+    cout << "Duplicate number is: " << findDuplicate(arr) << endl;
+    return 0;
+}*/
