@@ -20,7 +20,7 @@ int factorial(int n) {
     }
     return n * factorial(n - 1); // Recursive case
 }
-
+ 
 int main() {
    
         cout << factorial(5) << endl;
