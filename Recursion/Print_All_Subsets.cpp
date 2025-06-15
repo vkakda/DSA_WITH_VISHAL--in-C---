@@ -63,8 +63,7 @@ void generateUniqueSubsets(vector<int>& nums, vector<int>& ans, int i, vector<ve
     
     // Include the current element
     ans.push_back(nums[i]);
-    generateSubsets(nums, ans, i + 1, allSubsets);
-
+    generateSubsets(nums, ans, i + 1, allSubsets); 
     ans.pop_back(); // Backtrack
     
    
