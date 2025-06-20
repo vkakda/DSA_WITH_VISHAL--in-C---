@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 // DSA with Vishal - Combination Sum using recursion & backtracking.
 
 // Problem Statement:
