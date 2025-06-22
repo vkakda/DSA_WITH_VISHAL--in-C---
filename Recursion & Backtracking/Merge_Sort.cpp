@@ -10,6 +10,11 @@
 // Input: arr = [5, 2, 4, 6, 1, 3]
 // Output: [1, 2, 3, 4, 5, 6]
 
+// Time Complexity: O(n log n) for the merge sort algorithm.
+// Space Complexity: O(n) for the temporary array used in merging.
+
+
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -42,7 +47,7 @@ void merge(vector<int>& arr, int st, int mid, int end) {  //  Time Complexity - 
 }
 
 // mergeSort function to recursively sort the array
-void mergeSort(vector<int>& arr, int st, int end) {
+void mergeSort(vector<int>& arr, int st, int end) {  // Time Complexity - O(n) * O(log n) = O(n log n).
     if (st < end) {
     int mid = st + (end - st) / 2;
 
