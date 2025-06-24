@@ -13,7 +13,7 @@ class Node
 {
 public:
     int data;
-    Node *next;
+    Node* next;
 
     Node(int val)
     {
@@ -24,8 +24,8 @@ public:
 
 class List
 {
-    Node *head;
-    Node *tail;
+    Node* head;
+    Node* tail;
 
 public:
     List()
@@ -36,7 +36,7 @@ public:
     // Push at front
     void push_front(int val)
     {
-        Node *newNode = new Node(val);
+        Node* newNode = new Node(val);
         newNode->next = head;
         head = newNode;
         if (tail == NULL)
@@ -46,7 +46,7 @@ public:
     // Push at back
     void push_back(int val)
     {
-        Node *newNode = new Node(val);
+        Node* newNode = new Node(val);
         if (!head)
         {
             head = tail = newNode;
@@ -61,7 +61,7 @@ public:
     {
         if (!head)
             return;
-        Node *temp = head;
+        Node* temp = head;
         head = head->next;
         delete temp;
         if (head == NULL)
@@ -79,7 +79,7 @@ public:
             head = tail = NULL;
             return;
         }
-        Node *temp = head;
+        Node* temp = head;
         while (temp->next != tail)
             temp = temp->next;
         delete tail;
@@ -95,12 +95,12 @@ public:
             push_front(val);
             return;
         }
-        Node *temp = head;
+        Node* temp = head;
         for (int i = 0; temp && i < pos - 1; ++i)
             temp = temp->next;
         if (!temp)
             return; // Position out of bounds
-        Node *newNode = new Node(val);
+        Node* newNode = new Node(val);
         newNode->next = temp->next;
         temp->next = newNode;
         if (newNode->next == NULL)
@@ -110,7 +110,7 @@ public:
     // Search for a value
     bool search(int key)
     {
-        Node *temp = head;
+        Node* temp = head;
         while (temp)
         {
             if (temp->data == key)
@@ -123,7 +123,7 @@ public:
     // Print the linked list
     void printLL()
     {
-        Node *temp = head;
+        Node* temp = head;
         while (temp)
         {
             cout << temp->data << " -> ";
@@ -141,40 +141,40 @@ public:
 };
 
 // Push at front
-void push_front(Node *&head, int val)
+void push_front(Node* &head, int val)
 {
-    Node *newNode = new Node(val);
+    Node* newNode = new Node(val);
     newNode->next = head;
     head = newNode;
 }
 
 // Push at back
-void push_back(Node *&head, int val)
+void push_back(Node* &head, int val)
 {
-    Node *newNode = new Node(val);
+    Node* newNode = new Node(val);
     if (!head)
     {
         head = newNode;
         return;
     }
-    Node *temp = head;
+    Node* temp = head;
     while (temp->next)
         temp = temp->next;
     temp->next = newNode;
 }
 
 // Pop from front
-void pop_front(Node *&head)
+void pop_front(Node* &head)
 {
     if (!head)
         return;
-    Node *temp = head;
+    Node* temp = head;
     head = head->next;
     delete temp;
 }
 
 // Pop from back
-void pop_back(Node *&head)
+void pop_back(Node* &head)
 {
     if (!head)
         return;
@@ -184,7 +184,7 @@ void pop_back(Node *&head)
         head = NULL;
         return;
     }
-    Node *temp = head;
+    Node* temp = head;
     while (temp->next->next)
         temp = temp->next;
     delete temp->next;
@@ -192,27 +192,27 @@ void pop_back(Node *&head)
 }
 
 // Insert at position (0-based index)
-void insert_middle(Node *&head, int pos, int val)
+void insert_middle(Node* &head, int pos, int val)
 {
     if (pos == 0)
     {
         push_front(head, val);
         return;
     }
-    Node *temp = head;
+    Node* temp = head;
     for (int i = 0; temp && i < pos - 1; ++i)
         temp = temp->next;
     if (!temp)
         return; // Position out of bounds
-    Node *newNode = new Node(val);
+    Node* newNode = new Node(val);
     newNode->next = temp->next;
     temp->next = newNode;
 }
 
 // Search for a value
-bool search(Node *head, int key)
+bool search(Node* head, int key)
 {
-    Node *temp = head;
+    Node* temp = head;
     while (temp)
     {
         if (temp->data == key)
@@ -223,9 +223,9 @@ bool search(Node *head, int key)
 }
 
 // Print the linked list
-void printLL(Node *head)
+void printLL(Node* head)
 {
-    Node *temp = head;
+    Node* temp = head;
     while (temp)
     {
         cout << temp->data << " -> ";
