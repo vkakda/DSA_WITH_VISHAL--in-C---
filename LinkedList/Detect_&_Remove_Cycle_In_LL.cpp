@@ -16,22 +16,20 @@
 // Time Complexity: O(n), where n is the number of nodes in the linked list.
 // Space Complexity: O(1), as we use only a constant number of pointers.
 
-#include <iostream>
-using namespace std;
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 
-// Definition for singly-linked list node.
-class ListNode {
-public:
-    int val;
-    ListNode* next;
 
-    ListNode(int x) : val(x), next(NULL) {}
-};
-
+//Solution of LeetCode- 141
 class Solution {
 public:
-    // Detects and removes cycle if present
-    void detectAndRemoveCycle(ListNode* head) {
+    bool hasCycle(ListNode *head) {
         ListNode* slow = head;
         ListNode* fast = head;
 
@@ -39,18 +37,20 @@ public:
             slow = slow->next;
             fast = fast->next->next;
 
-            if(slow == fast) {
-                return true;
-            }    
+            if(slow == fast) return true;
         }
 
         return false;
     }
+};
 
+
+//solution of LeetCode- 142
+
+class Solution {
 public:
-    // Helper to remove the cycle
-    void removeCycle(ListNode* head, ListNode* meetingPoint) {
-         ListNode* slow = head;
+    ListNode *detectCycle(ListNode *head) {
+        ListNode* slow = head;
         ListNode* fast = head;
         bool isCycle = false;
 
@@ -70,34 +70,18 @@ public:
 
 
         slow = head;
-        ListNode* prev = NULL;
         while(slow != fast ){
             slow = slow->next;
-            prev = fast;
             fast = fast->next;
 
         }
-
-        prev->next = NULL; // Remove the cycle
 
         return slow;
     }
 };
 
-// Print the linked list from a given node
-void printList(ListNode* head) {
-    while (head != NULL) {
-        cout << head->val << "->";
-        head = head->next;
-    }
-    cout << "NULL" << endl;
-}
 
-int main() {
-    
 
-    return 0;
-}
 
 // LeetCode Problem: 141 // https://leetcode.com/problems/linked-list-cycle/
 // LeetCode Problem: 142 // https://leetcode.com/problems/linked-list-cycle-ii/
