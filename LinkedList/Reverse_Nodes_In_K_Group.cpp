@@ -29,33 +29,31 @@ struct ListNode {
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        if (!head || k == 1) return head;
-        ListNode dummy(0);
-        dummy.next = head;
-        ListNode* prev = &dummy, *curr = head, *nex = nullptr;
-
-        // Count the number of nodes in the list
+        ListNode* temp = head;
+        //check if K node exist
         int count = 0;
-        while (curr) {
+        while(count<k) {
+            if(temp == NULL) return head;
+            temp = temp->next;
             count++;
-            curr = curr->next;
         }
 
-        curr = head;
-        while (count >= k) {
-            nex = curr->next;
-            // Reverse k nodes
-            for (int i = 1; i < k; ++i) {
-                curr->next = nex->next;
-                nex->next = prev->next;
-                prev->next = nex;
-                nex = curr->next;
-            }
-            prev = curr;
-            curr = prev->next;
-            count -= k;
+        //recursive call for rest of the LL
+        ListNode* prevNode= reverseKGroup(temp, k);
+
+        //Reverse the current group
+        temp= head; count = 0;
+        while(count<k){
+            ListNode* next = temp->next;
+            temp->next = prevNode;
+
+            prevNode = temp;
+            temp = next;
+
+            count++;
         }
-        return dummy.next;
+
+        return prevNode;
     }
 };
 
@@ -80,7 +78,7 @@ int main() {
     cout << "Original List: ";
     printList(head);
 
-    int k = 2;
+    int k = 3;
     Solution s;
     ListNode* result = s.reverseKGroup(head, k);
 
@@ -102,31 +100,31 @@ int main() {
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        if (!head || k == 1) return head;
-        ListNode dummy(0);
-        dummy.next = head;
-        ListNode* prev = &dummy, *curr = head, *nex = nullptr;
-
+        ListNode* temp = head;
+        //check if K node exist
         int count = 0;
-        while (curr) {
+        while(count<k) {
+            if(temp == NULL) return head;
+            temp = temp->next;
             count++;
-            curr = curr->next;
         }
 
-        curr = head;
-        while (count >= k) {
-            nex = curr->next;
-            for (int i = 1; i < k; ++i) {
-                curr->next = nex->next;
-                nex->next = prev->next;
-                prev->next = nex;
-                nex = curr->next;
-            }
-            prev = curr;
-            curr = prev->next;
-            count -= k;
+        //recursive call for rest of the LL
+        ListNode* prevNode= reverseKGroup(temp, k);
+
+        //Reverse the current group
+        temp= head; count = 0;
+        while(count<k){
+            ListNode* next = temp->next;
+            temp->next = prevNode;
+
+            prevNode = temp;
+            temp = next;
+
+            count++;
         }
-        return dummy.next;
+
+        return prevNode;
     }
 };
 */
