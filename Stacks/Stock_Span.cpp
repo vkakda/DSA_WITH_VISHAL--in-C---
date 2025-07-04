@@ -55,9 +55,6 @@ int main() {
         }
         
         //print
-
-        
-
         cout << "Span: ";
         for(int val: ans){
             cout << val << " ";
